@@ -359,6 +359,7 @@ $lcolor: #005ea7;   //链接颜色
 }
 
 .cont_rz_list{
+  @extend %clearfix;
   li{
     width: 352px;
     @extend %pa;
@@ -366,12 +367,68 @@ $lcolor: #005ea7;   //链接颜色
     span{
       width: 236px;
       height: 58px;
+      line-height: 58px;
       @extend %inline;
       @include fz(16px);
+      @include align;
     }
     em{
-      @extend %ffar;
+      @extend %ffar,%inline;
       @include fz(20px);
+      font-style: italic;
+    }
+    i{
+      @extend %inline;
+      vertical-align: middle;
+      width: 72px;
+      height: 10px;
+      @extend %icon;
+      background-position: -97px -130px;
+    }
+    &.on{
+      color: $color;
+      i{
+        visibility: visible;
+      }
+    }
+  }
+  .i0{
+    top: 171px;
+    left: 60px;
+  }
+  .i1{
+    top: 326px;
+    left: 31px;
+    span{
+      width: 274px;
+    }
+  }
+  .i2{
+    top: 481px;
+    left: 104px;
+    span{
+      width: 274px;
+    }
+  }
+  .i3{
+    top: 245px;
+    left: 803px;
+    i{
+      background-position: -97px -141px;
+    }
+  }
+  .i4{
+    top: 376px;
+    left: 718px;
+    span{
+      width: 278px;
+    }
+  }
+  .i5{
+    top: 510px;
+    left: 780px;
+    span{
+      width: 316px;
     }
   }
 }

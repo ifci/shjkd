@@ -107,7 +107,7 @@ $(function(){
         interTime: 3000
     });
 
-    $('.cont_gc li,.cont_jz_list li').hover(function(){
+    $('.cont_gc li,.cont_jz_list li,.cont_rz_list li').hover(function(){
         $(this).addClass('on').siblings('li').removeClass('on');
     })
 })
