@@ -1,0 +1,388 @@
+/*
+ * Copyright (c) 2015 JKD TEAM (9koudai.net)
+ * @Author: fcdcyy@sina.cn
+ *
+ * @DateTime: 2015-03-23 09:09:49
+ */
+
+@charset "utf-8";
+
+$color: #ce141b;   //主体颜色
+$bg: #000000;      //主要背景
+$lcolor: #005ea7;   //链接颜色
+
+
+//字体大小方法
+@mixin fz($size: 12px){
+  font-size: $size;
+}
+//单边边框方法
+@mixin bor($dt, $ct: #1a1a1a){
+  border-#{$dt}: 1px solid $ct;
+}
+//全边框方法
+@mixin border($ct: #1a1a1a){
+  border: 1px solid $ct;
+}
+//圆角方法
+@mixin radius($radius: 10px) {
+  　-webkit-border-radius: $radius;
+  　-moz-border-radius: $radius;
+  　border-radius: $radius;
+}
+//外边距
+@mixin margin($margin: 10px){
+  margin: $margin;
+}
+//内边距
+@mixin padding($padding: 10px){
+  padding: $padding;
+}
+//文字对齐方式
+@mixin align($align: center){
+  text-align:$align;
+}
+//三角形
+@mixin tri($dire,$dc,$width){
+  width: 0;
+  height: 0;
+  line-height: 0;
+  border: $width solid transparent;
+  border-#{$dire}-color: $dc;
+}
+/* 首页banner */
+.bannerBox{
+  min-width: 1200px;
+  width: 100%;
+//  height:680px;
+  margin: auto;
+  overflow:hidden;
+  position:relative;
+  & > .hd{
+    width: 1200px;
+    height: 40px;
+    overflow:hidden;
+    position:absolute;
+    left:50%;
+    bottom:0px;
+    margin-left: -600px;
+    z-index:1;
+    text-align: right;
+    ul{
+      zoom:1;
+      li{
+        display: inline-block;
+        *display:inline;
+        zoom:1;
+        width: 14px;
+        height: 14px;
+        font-size: 0;
+        font-weight: bold;
+        margin: 5px 0 0 15px;
+        border-radius: 50%;
+        background: #bcbcbd;
+        opacity: .8;
+        color: #fff;
+        cursor: pointer;
+        &.on{
+          background:#4e4e52;
+          color:#fff;
+        }
+      }
+    }
+  }
+  & > .bd{
+    position:relative;
+    height:100%;
+    z-index:0;
+    li{
+      zoom:1;
+      vertical-align:middle;
+      height:550px;
+      a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-width: 1200px;
+        margin: auto;
+      }
+    }
+  }
+  .prev,.next{
+    position:absolute;
+    left:3%;
+    top:50%;
+    margin-top:-25px;
+    display:block;
+    width:50px;
+    height:50px;
+    background: url(../images/icon.png) 0 -21px no-repeat;
+    filter:alpha(opacity=50);
+    opacity:0.5;
+  }
+  .next{
+    left:auto;
+    right:3%;
+    background-position:0 -75px;
+  }
+  .prev:hover,.next:hover{
+    filter:alpha(opacity=100);
+    opacity:1;
+  }
+  .con{
+    @extend %pa;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    margin-left: -600px;
+  }
+}
+
+//视频专区
+.cont_t{
+  @extend %clearfix;
+  margin-top: 60px;
+  @include align;
+  p{
+    @include fz(20px);
+    color: #666;
+    @extend %ffar;
+    font-weight: normal;
+    text-transform:uppercase;
+  }
+  h3{
+    @include fz(30px);
+    color: #000;
+    font-weight: bold;
+    background: #fff;
+    @extend %pr,%inline;
+    z-index: 9;
+    padding: 0 10px;
+  }
+  span{
+    color: $color;
+  }
+  i{
+    content: '';
+    @extend %pa;
+    top: 46px;
+    left: 0;
+    width: 100%;
+    @include bor(top,#ebebeb);
+    z-index: 2;
+  }
+}
+
+.cont_gc{
+  @include align;
+  @extend %clearfix;
+  margin-top: 50px;
+  background: url(../images/gz_line.png) no-repeat top left;
+  cursor: default;
+  li{
+    width: 31%;
+    height: 490px;
+    @extend %fl;
+    padding: 0 1%;
+    background: url(../images/gz_line.png) no-repeat top right;
+  }
+  .cont_gc_t{
+    width: 80px;
+    height: 90px;
+    @extend %inline,%icon;
+    background-position: 0 -132px;
+    @include fz(48px);
+    color: #fff;
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+  .cont_gc_c{
+    margin-top: 26px;
+    @include fz(24px);
+    color: #333;
+  }
+  .cont_gc_s{
+    margin-top: 20px;
+    @include fz(20px);
+  }
+  .cont_gc_b{
+    @include fz(14px);
+    margin-top: 10px;
+    line-height: 2;
+    height: 80px;
+    overflow: hidden;
+  }
+  .cont_gc_a{
+    display: none;
+    @include fz(14px);
+    margin-top: 40px;
+    background: $color;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    display: none;
+    a{
+      color: #fff;
+      display: block;
+      padding: 6px 24px;
+    }
+  }
+  .on{
+    .cont_gc_a{
+      @extend %inline;
+    }
+    .cont_gc_t{
+      background-position: 0 -226px;
+    }
+  }
+}
+
+.cont_gc_on{
+}
+
+.cont_gc_hf{
+  background: url(../images/pic_06.png) no-repeat top center;
+  height: 130px;
+  width: 100%;
+  min-width: 1200px;
+  margin-top: -55px;
+  @extend %pr;
+}
+
+.cont_jz{
+  margin-top: 20px;
+  background: url(../images/pic_07.jpg) no-repeat top center;
+  height: 615px;
+  min-width: 1200px;
+}
+
+.cont_jz_t{
+  background: url(../images/pic_03.png) no-repeat;
+  width: 1102px;
+  height: 90px;
+  margin: 66px auto 0;
+  overflow: auto;
+}
+
+.cont_jz_list{
+  @extend %clearfix;
+  overflow: hidden;
+  margin-top: 90px;
+  @include align;
+  ul{
+    width: 1300px;
+  }
+  li{
+    @include border(#e3e7e6);
+    width: 278px;
+    height: 278px;
+    margin-right: 26px;
+    @extend %fl;
+    background: #f8f8f8;
+    cursor: default;
+    &.on{
+      background: #0b87ff;
+      color: #fff;
+      .cont_jz_p{
+        color: #fff;
+      }
+      .cont_jz_b{
+        background-position: 0 -435px;
+      }
+    }
+  }
+}
+
+.cont_jz_p{
+  @include fz(24px);
+  color: #333;
+  margin-top: 38px;
+}
+.cont_jz_b{
+  margin-top: 10px;
+  width: 102px;
+  height: 102px;
+  @extend %icon,%inline;
+  background-position: 5px -322px;
+}
+
+.cont_jz_c{
+  @include fz(16px);
+  margin-top: 14px;
+}
+
+
+
+
+%ffst{  //宋体
+  font-family: SimSun;
+}
+%ffht{  //黑体
+  font-family: SimHei;
+}
+%ffyh{  //微软雅黑
+  font-family: Microsoft yahei;
+}
+%ffar{  //Arial
+  font-family: Arial;
+}
+%icon{  //图标集
+  background-image: url(../images/icon.png);
+  background-repeat: no-repeat;
+}
+%w100{  //图片自适应
+  width: 100%;
+}
+%nowrap{  //单行文字
+  white-space: nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+%inline{  //行内元素
+  display:inline-block;
+  *display:inline;
+  zoom:1;
+  vertical-align: middle;
+}
+%imgtc{    //图片的垂直居中
+  display: table-cell;
+  vertical-align:middle;
+  text-align:center;
+  *display: block;
+  *font-size: 175px;/*约为高度的0.873，200*0.873 约为175*/
+  *font-family:Arial;
+  width:200px;
+  height:200px;
+  border: 1px solid #eee;
+}
+%center{    //主体居中
+  width: 1200px;
+  margin: auto;
+}
+%minw{    //最小宽度
+  min-width: 1200px;
+}
+%clearfix {
+  zoom:1;
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+%fl{
+  float: left;
+}
+%fr{
+  float: right;
+}
+%pr{
+  position: relative;
+}
+%pa{
+  position: absolute;
+}

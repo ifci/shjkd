@@ -1,0 +1,351 @@
+@charset "UTF-8";
+/*
+ * Copyright (c) 2015 JKD TEAM (9koudai.net)
+ * @Author: fcdcyy@sina.cn
+ *
+ * @DateTime: 2015-03-23 09:09:49
+ */
+html, body, form, h1, h2, h3, h4, h5, h6, div, dl, dt, dd, ul, ol, li, p, em, address, a, input, textarea, span, strong, img {
+  margin: 0px;
+  padding: 0px; }
+
+body {
+  font-size: 12px;
+  color: #666; }
+
+ul, dl {
+  list-style: none; }
+
+input, textarea, select, button {
+  font-size: 12px;
+  outline: none; }
+
+img {
+  border: none; }
+
+a {
+  color: #666;
+  text-decoration: none;
+  blr: expression(this.onFocus=this.blur());
+  outline: none; }
+
+a:hover {
+  color: #ce141b; }
+
+i, em {
+  font-style: normal; }
+
+table {
+  border-collapse: collapse;
+  margin: 0px; }
+
+thead, tbody, tfoot, tr, td {
+  margin: 0px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 12px;
+  font-weight: normal; }
+
+::selection {
+  background: #e57779;
+  color: #fff; }
+
+::-webkit-selection {
+  background: #e57779;
+  color: #fff; }
+
+::-moz-selection {
+  background: #e57779;
+  color: #fff; }
+
+section, article, aside, header, footer, nav, dialog, figure {
+  display: block; }
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+.clearfix {
+  zoom: 1; }
+
+.pr {
+  position: relative;
+  z-index: 0; }
+
+.pa {
+  position: absolute; }
+
+.tin {
+  text-indent: 2em; }
+
+.tac {
+  text-align: center; }
+
+.tal {
+  text-align: left; }
+
+.tar {
+  text-align: right; }
+
+.fl, .logo {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.center {
+  width: 1200px;
+  margin: auto; }
+
+/**********  header头部  *********/
+#header {
+  width: 100%;
+  height: 88px;
+  overflow: hidden; }
+
+.logo {
+  width: 400px;
+  overflow: hidden;
+  padding-top: 22px; }
+  .logo span {
+    font-size: 18px;
+    margin-top: 24px;
+    color: #333; }
+
+.header_r {
+  width: 700px;
+  text-align: right; }
+
+.tel {
+  font-size: 14px;
+  color: #999;
+  line-height: 1;
+  margin-top: 10px; }
+  .tel i {
+    width: 14px;
+    height: 14px; }
+  .tel span {
+    border-right: 1px solid #e0e0e0;
+    padding-right: 5px;
+    height: 14px; }
+  .tel em {
+    color: #333;
+    vertical-align: middle; }
+
+/**********  nav头部导航 *********/
+.nav {
+  max-width: 700px;
+  margin-top: 26px; }
+  .nav ul li {
+    text-align: center;
+    font-size: 14px;
+    margin-left: 28px; }
+    .nav ul li:hover a, .nav ul li.nav_on a {
+      color: #ce141b;
+      font-weight: bold; }
+  .nav ul a {
+    display: block;
+    color: #333;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; }
+
+/**********  content  *********/
+#content {
+  width: 100%; }
+
+/**********  footer底部  *********/
+#footer {
+  width: 100%;
+  background: #292929;
+  overflow: hidden;
+  color: #5e5e5e;
+  font-size: 14px; }
+  #footer a {
+    color: #5e5e5e; }
+    #footer a:hover {
+      color: #FFFFFF; }
+
+.footer_l {
+  padding-top: 38px;
+  margin-left: 10px;
+  width: 776px;
+  height: 280px;
+  border-right: 1px solid #1e1e1e;
+  line-height: 24px; }
+
+.footer_t i {
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #464646; }
+
+.footer_cu {
+  width: 390px; }
+  .footer_cu p {
+    color: #f2f0f0;
+    font-size: 16px;
+    margin-top: 10px; }
+  .footer_cu > div {
+    margin-top: 10px; }
+
+.footer_nav {
+  width: 385px; }
+  .footer_nav li {
+    padding: 10px 0 0; }
+
+.footer_tel {
+  font-size: 16px; }
+
+.footer_r {
+  padding-top: 38px;
+  border-left: 1px solid #464646;
+  width: 410px;
+  height: 280px; }
+
+.footer_rl {
+  width: 240px;
+  text-align: right; }
+
+.footer_logo {
+  width: 100%;
+  height: 63px;
+  background: url(../images/flogo.png) right top no-repeat;
+  margin-top: 72px; }
+
+.footer_rc {
+  border-bottom: 1px solid #5e5e5e;
+  margin-top: 36px; }
+
+.footer_qr {
+  border: 5px solid #464646;
+  width: 128px;
+  height: 128px;
+  overflow: hidden;
+  margin: 62px 0 0 10px; }
+  .footer_qr img {
+    width: 100%; }
+
+.footer_b {
+  height: 52px;
+  line-height: 52px;
+  background: #969696;
+  color: #333;
+  border-top: 1px solid #383838; }
+
+/*分页样式*/
+.paging {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 16px; }
+  .paging em, .paging a {
+    border: 1px solid #e0e0e0;
+    color: #666; }
+  .paging a:hover {
+    color: #333;
+    border: 1px solid #333; }
+  .paging span {
+    background: #333;
+    color: #fff; }
+  .paging em, .paging a, .paging span {
+    padding: 5px 10px;
+    margin-left: 5px; }
+
+/*面包屑导航*/
+.bread {
+  width: 1200px;
+  margin: 70px auto 0; }
+
+.bread_t {
+  color: #999; }
+  .bread_t i {
+    width: 8px;
+    height: 14px;
+    background-position: 0 -137px; }
+  .bread_t a {
+    color: #999; }
+    .bread_t a:hover {
+      color: #333; }
+
+.flink {
+  line-height: 1.6; }
+  .flink a {
+    margin: 0 5px; }
+
+.layer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; }
+
+.layer-shade {
+  width: 100%;
+  height: 100%; }
+
+.layer-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  box-shadow: 1px 1px 50px rgba(0, 0, 0, 0.3); }
+
+.layer-box-con {
+  z-index: 9; }
+
+.layer-close {
+  right: -20px;
+  top: -20px;
+  width: 38px;
+  height: 38px;
+  margin-left: 0;
+  background-position: 0 -174px;
+  cursor: pointer;
+  z-index: 10; }
+  .layer-close:hover {
+    background-position: 0 -215px; }
+
+body {
+  font-family: Microsoft yahei; }
+
+.footer_t {
+  font-family: Arial; }
+
+.tel i, .bread_t i, .layer-close {
+  background-image: url(../images/icon.png);
+  background-repeat: no-repeat; }
+
+.tel i, .tel span, .footer_rc, .paging em, .paging a, .paging span, .bread_t i, .flink span, .flink a {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  vertical-align: middle; }
+
+#header, #footer {
+  min-width: 1200px; }
+
+#footer, .footer_nav, .bread {
+  zoom: 1; }
+  #footer:after, .footer_nav:after, .bread:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+
+.logo a, .logo span, .nav ul li, .footer_l, .footer_cu, .footer_nav, .footer_r, .footer_rl, .footer_qr, .footer_bl {
+  float: left; }
+
+.header_r, .nav, .footer_br, .bread_t {
+  float: right; }
+
+.layer-box-con {
+  position: relative; }
+
+.layer-close {
+  position: absolute; }
+
+/*# sourceMappingURL=base.css.map */
