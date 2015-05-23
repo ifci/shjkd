@@ -293,6 +293,27 @@ $lcolor: #005ea7;   //链接颜色
       }
     }
   }
+  .i0{
+    .cont_jz_b{
+      background-position: 5px -322px;
+    }
+  }
+  .i1{
+    .cont_jz_b{
+      background-position: 5px -322px;
+    }
+  }
+  .i2{
+    .cont_jz_b{
+      background-position: 5px -322px;
+    }
+  }
+  .i3{
+    .cont_jz_b{
+      background-position: 5px -322px;
+    }
+  }
+
 }
 
 .cont_jz_p{
@@ -305,13 +326,56 @@ $lcolor: #005ea7;   //链接颜色
   width: 102px;
   height: 102px;
   @extend %icon,%inline;
-  background-position: 5px -322px;
 }
 
 .cont_jz_c{
   @include fz(16px);
   margin-top: 14px;
 }
+
+
+.cont_rz{
+  background: url(../images/pic_05.png) no-repeat top center;
+  height: 646px;
+  @extend %pr,%center;
+  .i0{
+
+  }
+}
+
+.cont_h3{
+  .cont_rz{
+    margin-top: 24px;
+  }
+}
+
+.cont_rz_t{
+  @extend %pa,%icon;
+  width: 140px;
+  height: 120px;
+  top: 0;
+  left: 30px;
+  background-position: -60px 0;
+}
+
+.cont_rz_list{
+  li{
+    width: 352px;
+    @extend %pa;
+    color: #333;
+    span{
+      width: 236px;
+      height: 58px;
+      @extend %inline;
+      @include fz(16px);
+    }
+    em{
+      @extend %ffar;
+      @include fz(20px);
+    }
+  }
+}
+
 
 
 
