@@ -191,6 +191,8 @@ section, article, aside, header, footer, nav, dialog, figure {
     margin-top: 10px; }
   .footer_cu > div {
     margin-top: 10px; }
+    .footer_cu > div:first-child {
+      margin-top: 0; }
 
 .footer_nav {
   width: 385px; }
@@ -270,11 +272,6 @@ section, article, aside, header, footer, nav, dialog, figure {
     .bread_t a:hover {
       color: #333; }
 
-.flink {
-  line-height: 1.6; }
-  .flink a {
-    margin: 0 5px; }
-
 .layer {
   position: fixed;
   width: 100%;
@@ -318,7 +315,7 @@ body {
   background-image: url(../images/icon.png);
   background-repeat: no-repeat; }
 
-.tel i, .tel span, .footer_rc, .paging em, .paging a, .paging span, .bread_t i, .flink span, .flink a {
+.tel i, .tel span, .footer_rc, .paging em, .paging a, .paging span, .bread_t i {
   display: inline-block;
   *display: inline;
   zoom: 1;

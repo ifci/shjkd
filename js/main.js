@@ -113,6 +113,14 @@ $(function(){
         mouseOverStop: false,
     });
 
+    $(".course_b").slide({
+        titCell:".hd li",
+        mainCell:".bd > ul",
+        autoPage:false,
+        autoPlay:false,
+        trigger:"click"
+    });
+
     $('.cont_gc li,.cont_jz_list li,.cont_rz_list li').hover(function(){
         $(this).addClass('on').siblings('li').removeClass('on');
     })

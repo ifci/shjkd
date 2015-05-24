@@ -143,12 +143,13 @@ $lcolor: #005ea7;   //链接颜色
   @extend %clearfix;
   margin-top: 60px;
   @include align;
-  @extend %ffyh;
+  font-family: "Microsoft yahei" !important;
   p{
     @include fz(20px);
     color: #666;
     font-weight: normal;
     text-transform:uppercase;
+    font-family: 'FZLanTingHeiS-UL-GB309945';
   }
   h3{
     @include fz(30px);
@@ -527,10 +528,230 @@ $lcolor: #005ea7;   //链接颜色
 
 
 .cont_h4_r{
-  @extend %fl;
+  @extend %fr;
+  margin: -14px 34px 0 0;
+}
+
+.course{
+  width: 430px;
+  height: 458px;
+  @include border(#ebebeb);
+  background: #f8f8f8;
+  @extend %pr;
+}
+
+.course_s{
+  @extend %pa;
+  right: -13px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 12px solid #999;
+  border-right: 12px solid transparent;
+}
+
+.course_tel{
+  @extend %pa,%icon;
+  width: 36px;
+  height: 372px;
+  background-position: -90px -154px;
+  right: -36px;
+  top: 108px;
+}
+
+.course_c{
+  h3{
+    font-size: 30px;
+    color: #000;
+    font-weight: bold;
+    z-index: 9;
+    padding: 26px 10px;
+    @include align;
+    em{
+      color: $color;
+    }
+  }
 }
 
 
+.course_b {
+  position: relative;
+  padding: 0 42px;
+  .hd {
+    overflow: hidden;
+    height: 40px;
+    background: #f4f4f4;
+    .prev,.next {
+      display: block;
+      width: 25px;
+      height: 25px;
+      line-height: 26px;
+      overflow: hidden;
+      cursor: pointer;
+      background: #c8c7cc;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      border-radius: 50%;
+      @include align;
+      @include fz(18px);
+      color: #fff;
+      @extend %ffst,%fl;
+      margin-top: 2px;
+    }
+    .next {
+      @extend %fr;
+    }
+    .prevStop {
+      background-position: -60px 0;
+    }
+    .nextStop {
+      background-position: -60px -50px;
+    }
+    .num {
+      @extend %fl;
+      width: 258px;
+      height: 28px;
+      margin-left: 20px;
+      background: #fff;
+      overflow: hidden;
+      zoom: 1;
+      @include border(#cbc7cc);
+      @include fz(14px);
+      color: #333;
+      @include align;
+      li {
+        float: left;
+        width: 25%;
+        height: 28px;
+        line-height: 28px;
+        overflow: hidden;
+        cursor: pointer;
+        &.on {
+          background: $color;
+          color: #fff;
+          &:hover{
+            color: #fff;
+          }
+        }
+        &:hover{
+          color: $color;
+        }
+      }
+    }
+  }
+  .bd {
+    width: 260px;
+    overflow: hidden;
+    margin: 10px 0 0 46px;
+    & > ul {
+      overflow: hidden;
+      zoom: 1;
+      & > li {
+        float: left;
+        line-height: 24px;
+        _display: inline;
+        span {
+          color: #999;
+        }
+      }
+    }
+    .infoList{
+      @include align;
+      @include fz(14px);
+      @extend %clearfix;
+      @include bor(left,#e0e0e0);
+      @include bor(bottom,#e0e0e0);
+      li{
+        @extend %fl;
+        width: 26px;
+        height: 26px;
+        line-height: 24px;
+        @include border(#e0e0e0);
+        margin:0 0 -1px -1px;
+        padding: 8px;
+        &.on{
+          background: #fff;
+          i{
+            color: #FFFFFF;
+            background: $color;
+            display: block;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            border-radius: 50%;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.listen{
+  height: 94px;
+  background: $color;
+  @include align;
+  color: #fff;
+  .listen_v{
+    @extend %inline;
+  }
+  i{
+    @extend %icon,%fl;
+    width: 36px;
+    height: 36px;
+    background-position: -138px -156px;
+    margin-top: 30px;
+  }
+  .listen_c{
+    @extend %fl;
+    margin: 30px 0 0 10px;
+    padding-left: 10px;
+    @include bor(left,#fff);
+  }
+  .listen_t{
+    @include fz(24px);
+    font-style: italic;
+    @extend %ffar;
+  }
+  .listen_b{
+    @include align(left);
+    line-height: 1;
+  }
+}
+
+.flink{
+  @include bor(top,#EBEBEB);
+  @include fz(14px);
+  height: 60px;
+  line-height: 60px;
+  margin-top: 60px;
+  span{
+    @extend %fl;
+    width: 116px;
+    @include align;
+    @include bor(left,#EBEBEB);
+    @include bor(right,#EBEBEB);
+    font-family: 'FZLanTingHeiS-UL-GB309945';
+  }
+  ul{
+    @extend %fl;
+    padding: 0 12px;
+    li{
+      @extend %fl;
+      padding: 0 12px;
+    }
+  }
+  a{
+    color: #999;
+    &:hover{
+      color: $color;
+    }
+  }
+}
 
 
 

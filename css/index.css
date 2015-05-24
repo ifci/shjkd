@@ -81,12 +81,14 @@
 
 .cont_t {
   margin-top: 60px;
-  text-align: center; }
+  text-align: center;
+  font-family: "Microsoft yahei" !important; }
   .cont_t p {
     font-size: 20px;
     color: #666;
     font-weight: normal;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    font-family: 'FZLanTingHeiS-UL-GB309945'; }
   .cont_t h3 {
     font-size: 30px;
     color: #000;
@@ -347,20 +349,184 @@
     right: 0;
     left: auto; }
 
-.kcap .prev, .kcap .next {
+.cont_h4_r {
+  margin: -14px 34px 0 0; }
+
+.course {
+  width: 430px;
+  height: 458px;
+  border: 1px solid #ebebeb;
+  background: #f8f8f8; }
+
+.course_s {
+  right: -13px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 12px solid #999;
+  border-right: 12px solid transparent; }
+
+.course_tel {
+  width: 36px;
+  height: 372px;
+  background-position: -90px -154px;
+  right: -36px;
+  top: 108px; }
+
+.course_c h3 {
+  font-size: 30px;
+  color: #000;
+  font-weight: bold;
+  z-index: 9;
+  padding: 26px 10px;
+  text-align: center; }
+  .course_c h3 em {
+    color: #ce141b; }
+
+.course_b {
+  position: relative;
+  padding: 0 42px; }
+  .course_b .hd {
+    overflow: hidden;
+    height: 40px;
+    background: #f4f4f4; }
+    .course_b .hd .prev, .course_b .hd .next {
+      display: block;
+      width: 25px;
+      height: 25px;
+      line-height: 26px;
+      overflow: hidden;
+      cursor: pointer;
+      background: #c8c7cc;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 18px;
+      color: #fff;
+      margin-top: 2px; }
+    .course_b .hd .prevStop {
+      background-position: -60px 0; }
+    .course_b .hd .nextStop {
+      background-position: -60px -50px; }
+    .course_b .hd .num {
+      width: 258px;
+      height: 28px;
+      margin-left: 20px;
+      background: #fff;
+      overflow: hidden;
+      zoom: 1;
+      border: 1px solid #cbc7cc;
+      font-size: 14px;
+      color: #333;
+      text-align: center; }
+      .course_b .hd .num li {
+        float: left;
+        width: 25%;
+        height: 28px;
+        line-height: 28px;
+        overflow: hidden;
+        cursor: pointer; }
+        .course_b .hd .num li.on {
+          background: #ce141b;
+          color: #fff; }
+          .course_b .hd .num li.on:hover {
+            color: #fff; }
+        .course_b .hd .num li:hover {
+          color: #ce141b; }
+  .course_b .bd {
+    width: 260px;
+    overflow: hidden;
+    margin: 10px 0 0 46px; }
+    .course_b .bd > ul {
+      overflow: hidden;
+      zoom: 1; }
+      .course_b .bd > ul > li {
+        float: left;
+        line-height: 24px;
+        _display: inline; }
+        .course_b .bd > ul > li span {
+          color: #999; }
+    .course_b .bd .infoList {
+      text-align: center;
+      font-size: 14px;
+      border-left: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0; }
+      .course_b .bd .infoList li {
+        width: 26px;
+        height: 26px;
+        line-height: 24px;
+        border: 1px solid #e0e0e0;
+        margin: 0 0 -1px -1px;
+        padding: 8px; }
+        .course_b .bd .infoList li.on {
+          background: #fff; }
+          .course_b .bd .infoList li.on i {
+            color: #FFFFFF;
+            background: #ce141b;
+            display: block;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            border-radius: 50%;
+            cursor: pointer; }
+
+.listen {
+  height: 94px;
+  background: #ce141b;
+  text-align: center;
+  color: #fff; }
+  .listen i {
+    width: 36px;
+    height: 36px;
+    background-position: -138px -156px;
+    margin-top: 30px; }
+  .listen .listen_c {
+    margin: 30px 0 0 10px;
+    padding-left: 10px;
+    border-left: 1px solid #fff; }
+  .listen .listen_t {
+    font-size: 24px;
+    font-style: italic; }
+  .listen .listen_b {
+    text-align: left;
+    line-height: 1; }
+
+.flink {
+  border-top: 1px solid #EBEBEB;
+  font-size: 14px;
+  height: 60px;
+  line-height: 60px;
+  margin-top: 60px; }
+  .flink span {
+    width: 116px;
+    text-align: center;
+    border-left: 1px solid #EBEBEB;
+    border-right: 1px solid #EBEBEB;
+    font-family: 'FZLanTingHeiS-UL-GB309945'; }
+  .flink ul {
+    padding: 0 12px; }
+    .flink ul li {
+      padding: 0 12px; }
+  .flink a {
+    color: #999; }
+    .flink a:hover {
+      color: #ce141b; }
+
+.kcap .prev, .kcap .next, .course_b .hd .prev, .course_b .hd .next {
   font-family: SimSun; }
 
-.cont_t {
-  font-family: Microsoft yahei; }
-
-.cont_rz_list li em {
+.cont_rz_list li em, .listen .listen_t {
   font-family: Arial; }
 
-.cont_gc .cont_gc_t, .cont_jz_b, .cont_rz_t, .cont_rz_list li i, .kcap .con i {
+.cont_gc .cont_gc_t, .cont_jz_b, .cont_rz_t, .cont_rz_list li i, .kcap .con i, .course_tel, .listen i {
   background-image: url(../images/icon.png);
   background-repeat: no-repeat; }
 
-.cont_t h3, .cont_gc .cont_gc_t, .cont_gc .on .cont_gc_a, .cont_jz_b, .cont_rz_list li span, .cont_rz_list li em, .cont_rz_list li i {
+.cont_t h3, .cont_gc .cont_gc_t, .cont_gc .on .cont_gc_a, .cont_jz_b, .cont_rz_list li span, .cont_rz_list li em, .cont_rz_list li i, .listen .listen_v {
   display: inline-block;
   *display: inline;
   zoom: 1;
@@ -370,25 +536,25 @@
   width: 1200px;
   margin: auto; }
 
-.cont_t, .cont_gc, .cont_jz_list, .cont_rz_list, .cont_h4 {
+.cont_t, .cont_gc, .cont_jz_list, .cont_rz_list, .cont_h4, .course_b .bd .infoList {
   zoom: 1; }
-  .cont_t:after, .cont_gc:after, .cont_jz_list:after, .cont_rz_list:after, .cont_h4:after {
+  .cont_t:after, .cont_gc:after, .cont_jz_list:after, .cont_rz_list:after, .cont_h4:after, .course_b .bd .infoList:after {
     content: ".";
     display: block;
     height: 0;
     clear: both;
     visibility: hidden; }
 
-.cont_gc li, .cont_jz_list li, .cont_h4_l, .kcap .box, .cont_h4_r {
+.cont_gc li, .cont_jz_list li, .cont_h4_l, .kcap .box, .course_b .hd .prev, .course_b .hd .next, .course_b .hd .num, .course_b .bd .infoList li, .listen i, .listen .listen_c, .flink span, .flink ul, .flink ul li {
   float: left; }
 
-.kcap .con {
+.kcap .con, .cont_h4_r, .course_b .hd .next {
   float: right; }
 
-.cont_t h3, .cont_gc_hf, .cont_rz, .kcap {
+.cont_t h3, .cont_gc_hf, .cont_rz, .kcap, .course {
   position: relative; }
 
-.bannerBox .con, .cont_t i, .cont_rz_t, .cont_rz_list li, .kcap .prev, .kcap .next {
+.bannerBox .con, .cont_t i, .cont_rz_t, .cont_rz_list li, .kcap .prev, .kcap .next, .course_s, .course_tel {
   position: absolute; }
 
 /*# sourceMappingURL=index.css.map */

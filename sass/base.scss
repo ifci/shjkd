@@ -301,6 +301,9 @@ section, article, aside, header, footer, nav, dialog, figure {
     margin-top: 10px;
   }
   & > div{
+    &:first-child{
+      margin-top: 0;
+    }
     margin-top: 10px;
   }
 }
@@ -420,17 +423,6 @@ section, article, aside, header, footer, nav, dialog, figure {
     &:hover{
       color: #333;
     }
-  }
-}
-
-.flink{
-  line-height: 1.6;
-  span{
-    @extend %inline;
-  }
-  a{
-    margin: 0 5px;
-    @extend %inline;
   }
 }
 
