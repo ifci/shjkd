@@ -143,10 +143,10 @@ $lcolor: #005ea7;   //链接颜色
   @extend %clearfix;
   margin-top: 60px;
   @include align;
+  @extend %ffyh;
   p{
     @include fz(20px);
     color: #666;
-    @extend %ffar;
     font-weight: normal;
     text-transform:uppercase;
   }
@@ -356,6 +356,11 @@ $lcolor: #005ea7;   //链接颜色
   top: 0;
   left: 30px;
   background-position: -60px 0;
+  a{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .cont_rz_list{
@@ -379,7 +384,7 @@ $lcolor: #005ea7;   //链接颜色
     }
     i{
       @extend %inline;
-      vertical-align: middle;
+      visibility: hidden;
       width: 72px;
       height: 10px;
       @extend %icon;
@@ -400,14 +405,14 @@ $lcolor: #005ea7;   //链接颜色
     top: 326px;
     left: 31px;
     span{
-      width: 274px;
+      width: 277px;
     }
   }
   .i2{
     top: 481px;
     left: 104px;
     span{
-      width: 274px;
+      width: 276px;
     }
   }
   .i3{
@@ -418,19 +423,111 @@ $lcolor: #005ea7;   //链接颜色
     }
   }
   .i4{
-    top: 376px;
-    left: 718px;
+    top: 377px;
+    left: 719px;
     span{
       width: 278px;
+    }
+    i{
+      background-position: -97px -141px;
     }
   }
   .i5{
     top: 510px;
-    left: 780px;
+    left: 781px;
+    width: 400px;
     span{
       width: 316px;
     }
+    i{
+      background-position: -97px -141px;
+    }
   }
+}
+
+
+.cont_h4{
+  @include bor(top,#ebebeb);
+  @extend %clearfix;
+}
+
+.cont_h4_l{
+  @extend %fl;
+  width: 58%;
+}
+
+.kcap{
+  background: #f8f8f8;
+  margin-top: 40px;
+  @extend %pr;
+  .bd{
+    li{
+      height: 397px;
+      @include bor(bottom,#e6e4e4);
+      margin: 30px 0 30px 30px;
+    }
+  }
+  .box{
+    overflow: hidden;
+    width: 234px;
+    @extend %fl;
+    img{
+      width: 100%;
+    }
+  }
+  .con{
+    @extend %fr;
+    width: 356px;
+    margin-right: 42px;
+    @include fz(16px);
+    line-height: 24px;
+    max-height: 380px;
+    overflow: hidden;
+    h3{
+      height: 40px;
+      @include bor(bottom,#e6e4e4);
+      @include fz(26px);
+      color: #333;
+      margin-bottom: 5px;
+    }
+    i{
+      @extend %icon;
+      display: inline-block;
+      zoom:1;
+      *display: inline;
+      vertical-align: top;
+      width: 16px;
+      height: 14px;
+      background-position: -28px 0;
+      vertical-align: top;
+      margin-right: 8px;
+    }
+  }
+  .prev,.next{
+    @extend %pa,%ffst;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    top: 50%;
+    left: 0;
+    margin-top: -20px;
+    background: #7c7c7c;
+    @include align;
+    color: #fff;
+    @include fz(30px);
+    &:hover{
+      background: $color;
+    }
+  }
+  .next{
+    right: 0;
+    left: auto;
+  }
+}
+
+
+.cont_h4_r{
+  @extend %fl;
 }
 
 
