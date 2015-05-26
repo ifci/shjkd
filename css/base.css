@@ -108,11 +108,10 @@ section, article, aside, header, footer, nav, dialog, figure {
 
 .logo {
   width: 400px;
-  overflow: hidden;
   padding-top: 22px; }
   .logo span {
     font-size: 18px;
-    margin-top: 24px;
+    margin: 24px 0 0 10px;
     color: #333; }
 
 .header_r {
@@ -139,19 +138,27 @@ section, article, aside, header, footer, nav, dialog, figure {
 .nav {
   max-width: 700px;
   margin-top: 26px; }
-  .nav ul li {
-    text-align: center;
-    font-size: 14px;
-    margin-left: 28px; }
-    .nav ul li:hover a, .nav ul li.nav_on a {
-      color: #ce141b;
-      font-weight: bold; }
-  .nav ul a {
-    display: block;
-    color: #333;
-    width: 100%;
-    height: 100%;
-    overflow: hidden; }
+  .nav ul {
+    width: 100%; }
+    .nav ul li {
+      text-align: center;
+      font-size: 14px;
+      margin-left: 28px;
+      *margin-left: 0;
+      *float: none;
+      *width: 100px; }
+      .nav ul li.nav_on a {
+        color: #ce141b;
+        font-weight: bold; }
+      .nav ul li:hover a {
+        *color: #ce141b;
+        *font-weight: bold; }
+    .nav ul a {
+      display: block;
+      color: #333;
+      width: 100%;
+      height: 100%;
+      overflow: hidden; }
 
 /**********  content  *********/
 #content {

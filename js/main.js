@@ -93,10 +93,45 @@
                     options.scrollbar ? $('body').css('overflow', 'hidden') : '';
                 })
             });
+        },
+        anim: function(opts){
+            var defaults = {
+                v: '0.0.1'
+            }, options = $.extend(defaults, opts);
+            return this.each(function(i) {
+                var bottom_of_object, bottom_of_window;
+                bottom_of_object = $(this).position().top;
+                bottom_of_window = $(window).scrollTop() + $(window).height();
+                console.log(bottom_of_object + "," + bottom_of_window);
+                if (bottom_of_window > bottom_of_object) {
+                    return $(this).addClass("active");
+                }
+            })
         }
     });
 })(jQuery);
 $(function(){
+    $(window).scroll(function(){
+        $(".anim-row").anim();
+    });
+
+    $('.slideTxtBox .hd li').hover(function () {
+        var i = $(this).index();
+        var img = $('.slideTxtBox .bd li').eq(i).data('src');
+        $(".slideTxtBox .list_r").fragmentFly({
+            image_url:img,    //背景图路径，当前目录为元素所在的html目录
+            cut_dir:"x",    //可选"x"或"y"，默认均分x方向
+            ave_part:12,    //均分cut_dir方向，默认切割成12份
+            rm_part:[2,3]   //非cut_dir方向上随机切割，默认最小2份，最多3份
+        },{
+            anime_dir:"down",   //切割子元素动画运行方向，可选"up","down","left","right"，默认为down
+            path:[500,800],     //切割子元素动画路长，默认路径最短500px，最长800px
+            time:[1000,1300],   //切割子元素动画时长，默认时长最短1000ms，最长1300ms
+            opacity:[1,1]       //切割子元素透明度变化，默认初始为1，结束为1(即无渐变)
+        });
+    }, function(){});
+
+
     $('#banner').slide({
         mainCell:".bd ul",
         autoPlay:true,
@@ -110,7 +145,7 @@ $(function(){
         mainCell:".bd ul",
         autoPlay:false,
         effect: "fold",
-        mouseOverStop: false,
+        mouseOverStop: false
     });
 
     $(".course_b").slide({
@@ -121,7 +156,31 @@ $(function(){
         trigger:"click"
     });
 
+    $(".slideTxtBox").slide({
+        mainCell: ".bd > ul"
+    });
+
     $('.cont_gc li,.cont_jz_list li,.cont_rz_list li').hover(function(){
         $(this).addClass('on').siblings('li').removeClass('on');
+    });
+
+
+    $(".infoList li").bind("click", function () {
+        $.ajax({
+            url: "",
+            type: "post",
+            data: { pid: $(this).data('pid') },
+            dataType: "json",
+            success: function (data) {
+                $("#kcap .bd .box img").attr('src', data.img);
+                $("#name").text(data.name);
+                $("#tit").text(data.tit);
+                $("#time").text(data.time);
+                $("#address").text(data.address);
+                $("#rname").text(data.rname);
+                $("#rtxt").text(data.rtxt);
+            }
+        });
     })
-})
+
+});

@@ -180,14 +180,13 @@ section, article, aside, header, footer, nav, dialog, figure {
 .logo {
   @extend .fl;
   width: 400px;
-  overflow: hidden;
   padding-top: 22px;
   a,span{
     @extend %fl;
   }
   span{
     @include fz(18px);
-    margin-top: 24px;
+    margin: 24px 0 0 10px;
     color: #333;
   }
 }
@@ -228,14 +227,24 @@ section, article, aside, header, footer, nav, dialog, figure {
   margin-top: 26px;
   @extend %fr;
   ul {
+    width: 100%;
     li {
       @extend %fl;
       @include align;
       @include fz(14px);
       margin-left: 28px;
-      &:hover a,&.nav_on a{
+      *margin-left: 0;
+      *float: none;
+      *width: 100px;
+      &.nav_on a{
         color: $color;
         font-weight: bold;
+      }
+      &:hover{
+        a{
+          *color: $color;
+          *font-weight: bold;
+        }
       }
     }
     a{
