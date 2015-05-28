@@ -96,16 +96,58 @@
         },
         anim: function(opts){
             var defaults = {
-                v: '0.0.1'
+                v: '0.0.1',
+                delay: 200,   //延迟触发的距离
+                ease: 'fadeInUp'
             }, options = $.extend(defaults, opts);
             return this.each(function(i) {
-                var bottom_of_object, bottom_of_window;
-                bottom_of_object = $(this).position().top;
+                var ease = $(this).attr('anim-ease') || options.ease,t = $(this);
+                var bottom_of_object, bottom_of_window;   //元素距离顶部的值，元素进入视野的高度
+                bottom_of_object = parseInt($(this).offset().top) + options.delay;
                 bottom_of_window = $(window).scrollTop() + $(window).height();
-                console.log(bottom_of_object + "," + bottom_of_window);
+                //console.log(bottom_of_object + "," + bottom_of_window);
                 if (bottom_of_window > bottom_of_object) {
-                    return $(this).addClass("active");
+                    return $(this).addClass("active animated " + ease);
                 }
+            })
+        },
+        setRotateX: function(opts){
+            var defaults = {
+                v: '0.0.1',
+                delay: 200,   //延迟触发的距离
+                ease: 'fadeInUp'
+            }, options = $.extend(defaults, opts);
+            return this.each(function(i) {
+                var $this = $(this),timer,degTarget=0;
+                $this.mousemove(function(ev){
+                    var deg = 10,pos = ev.clientX - this.offsetLeft;
+                    if(ev.clientX < this.offsetLeft + this.offsetWidth/2){
+                        degTarget = (deg - parseFloat(pos/this.offsetWidth*2).toFixed(1)*deg)*-1;
+                    }else{
+                        degTarget = (pos/this.offsetWidth*2).toFixed(1)*(deg) - deg;
+                    }
+
+                    console.log(degTarget);
+
+                    $this.css({
+                        "-webkit-transform": "rotateY(" + degTarget + "deg)",
+                        "-moz-transform": "rotateY(" + degTarget + "deg)",
+                        "-ms-transform": "rotateY(" + degTarget + "deg)",
+                        "-o-transform": "rotateY(" + degTarget + "deg)",
+                        "transform": "rotateY(" + degTarget + "deg)"
+                    })
+                });
+
+
+                $this.mouseout(function(){
+                    $this.css({
+                        "-webkit-transform": "rotateY(0deg)",
+                        "-moz-transform": "rotateY(0deg)",
+                        "-ms-transform": "rotateY(0deg)",
+                        "-o-transform": "rotateY(0deg)",
+                        "transform": "rotateY(0deg)"
+                    })
+                })
             })
         }
     });
@@ -113,6 +155,16 @@
 $(function(){
     $(window).scroll(function(){
         $(".anim-row").anim();
+    });
+
+    $(".rotateX li").setRotateX();
+
+
+
+
+    $(window).load(function(){
+        $(".bannerBox .bd").css('visibility','visible');
+        $(".loader1").remove();
     });
 
     $('.slideTxtBox .hd li').hover(function () {

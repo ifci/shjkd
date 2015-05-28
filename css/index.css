@@ -5,6 +5,69 @@
  *
  * @DateTime: 2015-03-23 09:09:49
  */
+.P800 {
+  -ms-perspective: 800px;
+  -moz-perspective: 800px;
+  -webkit-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px; }
+
+.T3D {
+  -ms-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: 0.4s all ease;
+  -moz-transition: 0.4s all ease;
+  -ms-transition: 0.4s all ease;
+  -o-transition: 0.4s all ease;
+  transition: 0.4s all ease; }
+
+/* Radial In */
+.hvr-radial-in {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden;
+  /*background: #2098d1;*/
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s; }
+
+.hvr-radial-in:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #e1e1e1;
+  border-radius: 100%;
+  -webkit-transform: scale(2);
+  transform: scale(2);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out; }
+
+.hvr-radial-in:hover, .hvr-radial-in:focus, .hvr-radial-in:active {
+  /*color: white;*/ }
+
+.on.hvr-radial-in:before, .hvr-radial-in:focus:before, .hvr-radial-in:active:before {
+  -webkit-transform: scale(0);
+  transform: scale(0); }
+
 .anim-row {
   opacity: 0;
   -webkit-transition: 0.8s all ease;
@@ -16,10 +79,64 @@
 .active {
   opacity: 1; }
 
+.loader1 {
+  display: inline-block;
+  font-size: 0px;
+  padding: 0px;
+  top: 50%;
+  left: 50%;
+  z-index: 999; }
+
+.loader1 span {
+  vertical-align: middle;
+  border-radius: 100%;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 3px 2px;
+  -webkit-animation: loader1 0.8s linear infinite alternate;
+  animation: loader1 0.8s linear infinite alternate; }
+
+.loader1 span:nth-child(1) {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+  background: rgba(245, 0, 0, 0.6); }
+
+.loader1 span:nth-child(2) {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+  background: rgba(245, 0, 0, 0.8); }
+
+.loader1 span:nth-child(3) {
+  -webkit-animation-delay: -0.26666s;
+  animation-delay: -0.26666s;
+  background: #f50000; }
+
+.loader1 span:nth-child(4) {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+  background: rgba(245, 0, 0, 0.8); }
+
+.loader1 span:nth-child(5) {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+  background: rgba(245, 0, 0, 0.4); }
+
+@keyframes loader1 {
+  from {
+    transform: scale(0, 0); }
+  to {
+    transform: scale(1, 1); } }
+@-webkit-keyframes loader1 {
+  from {
+    -webkit-transform: scale(0, 0); }
+  to {
+    -webkit-transform: scale(1, 1); } }
 /* 首页banner */
 .bannerBox {
   min-width: 1200px;
   width: 100%;
+  height: 550px;
   margin: auto;
   overflow: hidden;
   position: relative; }
@@ -55,7 +172,8 @@
   .bannerBox > .bd {
     position: relative;
     height: 100%;
-    z-index: 0; }
+    z-index: 0;
+    visibility: hidden; }
     .bannerBox > .bd li {
       zoom: 1;
       vertical-align: middle;
@@ -327,7 +445,6 @@
   margin-top: 14px; }
 
 .cont_rz {
-  background: url(../images/pic_05.png) no-repeat top center;
   height: 646px; }
 
 .cont_h3 .cont_rz {
@@ -353,27 +470,98 @@
     -webkit-transform: translate(0, -10px); }
   to {
     -webkit-transform: translate(0, 0); } }
+.cont_rz_ld {
+  width: 256px;
+  height: 256px;
+  background: url(../images/pic_09.png) no-repeat;
+  left: 448px;
+  top: -1px;
+  z-index: 1; }
+
+.cont_rz_rw {
+  width: 394px;
+  height: 530px;
+  background: url(../images/pic_12.png) no-repeat;
+  left: 395px;
+  top: 116px;
+  z-index: 2; }
+
+.cont_rz_bz {
+  width: 276px;
+  height: 121px;
+  background: url(../images/pic_10.png) no-repeat;
+  left: 747px;
+  top: 24px;
+  z-index: 3; }
+
+.cont_rz_fh {
+  width: 278px;
+  height: 60px;
+  background: url(../images/pic_11.png) no-repeat;
+  left: 784px;
+  top: 139px;
+  z-index: 1; }
+
 .cont_rz_list li {
   width: 352px;
-  color: #333; }
+  color: #333;
+  cursor: default; }
   .cont_rz_list li span {
     width: 236px;
     height: 58px;
     line-height: 58px;
+    background: #fff;
     font-size: 16px;
-    text-align: center; }
+    text-align: center;
+    border: 1px dashed #ebebeb;
+    border-radius: 10px;
+    -webkit-transition: 0.4s all ease;
+    -moz-transition: 0.4s all ease;
+    -ms-transition: 0.4s all ease;
+    -o-transition: 0.4s all ease;
+    transition: 0.4s all ease; }
   .cont_rz_list li em {
     font-size: 20px;
     font-style: italic; }
   .cont_rz_list li i {
-    visibility: hidden;
     width: 72px;
     height: 10px;
-    background-position: -97px -130px; }
+    background-position: -127px -320px; }
   .cont_rz_list li.on {
     color: #ce141b; }
+    .cont_rz_list li.on span {
+      border-color: #ce141b;
+      -webkit-transform: translate(10px, 0);
+      -moz-transform: translate(10px, 0);
+      -ms-transform: translate(10px, 0);
+      -o-transform: translate(10px, 0);
+      transform: translate(10px, 0); }
     .cont_rz_list li.on i {
-      visibility: visible; }
+      background-position: -97px -130px; }
+    .cont_rz_list li.on.i3 i {
+      background-position: -97px -141px; }
+    .cont_rz_list li.on.i3 span {
+      -webkit-transform: translate(-10px, 0);
+      -moz-transform: translate(-10px, 0);
+      -ms-transform: translate(-10px, 0);
+      -o-transform: translate(-10px, 0);
+      transform: translate(-10px, 0); }
+    .cont_rz_list li.on.i4 i {
+      background-position: -97px -141px; }
+    .cont_rz_list li.on.i4 span {
+      -webkit-transform: translate(-10px, 0);
+      -moz-transform: translate(-10px, 0);
+      -ms-transform: translate(-10px, 0);
+      -o-transform: translate(-10px, 0);
+      transform: translate(-10px, 0); }
+    .cont_rz_list li.on.i5 i {
+      background-position: -97px -141px; }
+    .cont_rz_list li.on.i5 span {
+      -webkit-transform: translate(-10px, 0);
+      -moz-transform: translate(-10px, 0);
+      -ms-transform: translate(-10px, 0);
+      -o-transform: translate(-10px, 0);
+      transform: translate(-10px, 0); }
 .cont_rz_list .i0 {
   top: 171px;
   left: 60px; }
@@ -391,14 +579,14 @@
   top: 245px;
   left: 803px; }
   .cont_rz_list .i3 i {
-    background-position: -97px -141px; }
+    background-position: -127px -331px; }
 .cont_rz_list .i4 {
   top: 377px;
   left: 719px; }
   .cont_rz_list .i4 span {
     width: 278px; }
   .cont_rz_list .i4 i {
-    background-position: -97px -141px; }
+    background-position: -127px -331px; }
 .cont_rz_list .i5 {
   top: 510px;
   left: 781px;
@@ -406,7 +594,7 @@
   .cont_rz_list .i5 span {
     width: 316px; }
   .cont_rz_list .i5 i {
-    background-position: -97px -141px; }
+    background-position: -127px -331px; }
 
 .cont_h4 {
   border-top: 1px solid #ebebeb; }
@@ -450,6 +638,7 @@
       vertical-align: top;
       margin-right: 8px; }
   .kcap .prev, .kcap .next {
+    display: none;
     width: 40px;
     height: 40px;
     line-height: 40px;
@@ -763,7 +952,7 @@
       text-align: center;
       background: #eb6100;
       color: #fff;
-      margin: 10px 0 0 30px;
+      margin: 15px 0 0 30px;
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
       -ms-border-radius: 5px;
@@ -1012,7 +1201,7 @@
 .cont_t h3, .cont_gc li, .cont_gc_hf, .cont_jz_list li.on .cont_jz_b, .cont_jz_b, .cont_rz, .kcap, .course, .slideTxtBox .list_r, .cont_h6_tt, .cont_h6_l .list .num {
   position: relative; }
 
-.bannerBox .con, .cont_t i, .cont_gc .cont_gc_t, .cont_jz_i i, .cont_jz_b em, .cont_rz_t, .cont_rz_list li, .kcap .prev, .kcap .next, .course_s, .course_tel, .cont_h6_tt i, .cont_h6_l .list .num i {
+.loader1, .bannerBox .con, .cont_t i, .cont_gc .cont_gc_t, .cont_jz_i i, .cont_jz_b em, .cont_rz_t, .cont_rz_ld, .cont_rz_rw, .cont_rz_bz, .cont_rz_fh, .cont_rz_list li, .kcap .prev, .kcap .next, .course_s, .course_tel, .cont_h6_tt i, .cont_h6_l .list .num i {
   position: absolute; }
 
 /*# sourceMappingURL=index.css.map */
