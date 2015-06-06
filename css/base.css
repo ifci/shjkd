@@ -328,7 +328,7 @@ body {
   zoom: 1;
   vertical-align: middle; }
 
-#header, #footer {
+#header, #content, #footer {
   min-width: 1200px; }
 
 #footer, .footer_nav, .bread {

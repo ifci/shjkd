@@ -149,18 +149,36 @@
                     })
                 })
             })
+        },
+        fader: function(opts) {
+            var defaults = {
+                v: '0.0.1',
+                speed: 500, // 显示的速度
+                randomize: false, // 选择随机
+                reverse: false, // 选择反向
+                animate: 500, // 消失的速度
+                callback: function(){} // 回调函数
+            }, options = $.extend(defaults, opts);
+            var d = 0;
+            return this.each(function (i) {
+                var t = $(this);
+                /*t.hide();
+                t.delay(d).fadeTo(options.animate, 1);
+                d += options.speed;*/
+            })
         }
     });
 })(jQuery);
 $(function(){
+
+    $('.fader li').fader();
+
+
     $(window).scroll(function(){
         $(".anim-row").anim();
     });
 
     $(".rotateX li").setRotateX();
-
-
-
 
     $(window).load(function(){
         $(".bannerBox .bd").css('visibility','visible');
@@ -212,7 +230,16 @@ $(function(){
         mainCell: ".bd > ul"
     });
 
-    $('.cont_gc li,.cont_jz_list li,.cont_rz_list li').hover(function(){
+    $(".jsgc_px_c").slide({
+        titCell:".hd ul",
+        mainCell:".bd ul",
+        autoPage:true,
+        effect:"left",
+        autoPlay:true,
+        vis:3
+    });
+
+    $('.cont_gc li,.cont_jz_list li,.cont_rz_list li,.jsgc_tx_c li').hover(function(){
         $(this).addClass('on').siblings('li').removeClass('on');
     });
 
@@ -233,6 +260,15 @@ $(function(){
                 $("#rtxt").text(data.rtxt);
             }
         });
-    })
+    });
+
+
+    $(".jsgc_rz_c li,.jsgc_al_c li").hover(function(){
+        $(this).addClass('on').siblings('li').removeClass('on');
+    });
+
+
+    var parallax = $('#parallax').parallax();
+    //parallax.parallax('enable');
 
 });

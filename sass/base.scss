@@ -261,6 +261,7 @@ section, article, aside, header, footer, nav, dialog, figure {
 /**********  content  *********/
 #content{
   width: 100%;
+  @extend %minw;
 }
 
 
